@@ -4,13 +4,13 @@ app = Flask(__name__)
 
 posts = [
     {'author': 'Mike',
-     'title': 'fist post',
+     'title': 'first post',
      'content': 'first content',
      'date_posted': '1/1/2020'},
 
-    {'author': 'Mike',
-     'title': 'fist post',
-     'content': 'first content',
+    {'author': 'james',
+     'title': 'second post',
+     'content': 'second content',
      'date_posted': '1/1/2020'}
 ]
 
@@ -23,7 +23,7 @@ def home():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", title='About')
 
 
 if __name__ == "__main__":
