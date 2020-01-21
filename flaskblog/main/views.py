@@ -1,6 +1,6 @@
 from flask import (render_template, request, redirect, 
-                   url_for, abort)
-from . import main
+                   url_for, abort, Blueprint)
+from flaskblog import main
 from ..models import User, Comment, Post, Subscribers
 from flask_login import login_required, current_user
 from .forms import (UpdateProfile, PostForm, 
@@ -10,6 +10,8 @@ import bleach
 from .. import db
 from ..requests import get_quote
 from ..email import welcome_message, notification_message
+
+main = Blueprint("main",__name__)
 
 @main.route("/", methods = ["GET", "POST"])
 def index():
