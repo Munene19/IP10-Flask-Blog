@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container text-center">
-  <p><h1>{{quote.author}}</h1></p>
-  <p><h1>{{quote.quote}}</h1></p>
+<div class="jumbotron">
+       <p>{{quote.quote}}</p>
+  <p><h1>~{{quote.author}}~</h1></p>
+  
   </div>
     {% for post in posts.items %}
         <article class="media content-section">
